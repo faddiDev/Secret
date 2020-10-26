@@ -1,6 +1,6 @@
 /*
 	Author : Faddi Susanto
-	Simple Encryption String
+	Simple Encryption and Decryption String
 */
 
 class Secret {
@@ -24,30 +24,30 @@ class Secret {
 	
 	public Secret() {}
 	
-	protected String Encoder(String encode) {
-		String[] arrayPhrase = encode.split("");
-		encode = "";
-		for(int i=0;i<arrayPhrase.length;i++) {
+	protected String Encryption(String encrypt) {
+		String[] arrayEncrypt = encrypt.split("");
+		encrypt = "";
+		for(int i=0;i<arrayEncrypt.length;i++) {
 			for(int j=0;j<this.phrase[0].length;j++) {
-				if(arrayPhrase[i].equals(this.phrase[0][j])) {
-					encode += this.phrase[1][j];
+				if(arrayEncrypt[i].equals(this.phrase[0][j])) {
+					encrypt += this.phrase[1][j];
 				}
 			}
 		}
-		return encode;
+		return encrypt;
 	}
 	
-	protected String Decoder(String decode) {
-		String[] arrayPhrase = decode.split("");
-		decode = "";
-		for(int i=0;i<arrayPhrase.length;i++) {
+	protected String Decryption(String decrypt) {
+		String[] arrayEncrypted = decrypt.split("");
+		decrypt = "";
+		for(int i=0;i<arrayEncrypted.length;i++) {
 			for(int j=0;j<this.phrase[0].length;j++) {
-				if(arrayPhrase[i].equals(this.phrase[1][j])) {
-					decode += this.phrase[0][j];
+				if(arrayEncrypted[i].equals(this.phrase[1][j])) {
+					decrypt += this.phrase[0][j];
 				}
 			}
 		}
-		return decode;
+		return decrypt;
 	}
 	
 }
